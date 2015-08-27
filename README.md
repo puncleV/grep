@@ -3,5 +3,5 @@
 	Java "Grep" analog <br>
 **USAGE:**<br>
 	java main arg1 (arg2)<br>
-arg1 - text to found
-arg2 - path to file where looking for text (default:"text.txt")
+arg1 - text to found (without case sensitivity)<br>
+arg2 - path to file where looking for arg1 (default:"text.txt"; WITH case sensitivity)
