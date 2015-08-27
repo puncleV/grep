@@ -1,0 +1,6 @@
+aaa bbb ccc
+ccc ddd eee
+eee fff ggg
+z a aaa
+z b aaa
+bbb r t
