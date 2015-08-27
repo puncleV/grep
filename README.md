@@ -1,3 +1,5 @@
 # grep
-Just my little grep
-1 param - text that you want to found, without case sensitivity
+**SUMMURY:** <br>
+	Java "Grep" analog <br>
+**USAGE:**<br>
+	java main "text" <br>
