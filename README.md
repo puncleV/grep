@@ -1,5 +1,5 @@
 # grep
-**SUMMURY:** <br>
+**SUMMARY:** <br>
 	Java "Grep" analog <br>
 **USAGE:**<br>
 	java main arg1 (arg2)<br>
