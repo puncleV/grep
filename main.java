@@ -5,8 +5,18 @@ import java.io.IOException;
 import java.nio.Buffer;
 
 //MY GREP)))0
+	/*
+	* Аналог grep, с чтением только из файла
+	* @author : Viktor Kozlov
+	*
+	* */
 class Main{
 	public static final String DEFAULT_PATH_TO_FILE = "text.txt";
+	/*
+	* Октрытие буфферизированного чтения из файла
+	* @param pathToFile Путь к файлу
+	* @return BufferedReader с открытым файлом
+	* */
 	public static BufferedReader openFile( String pathToFile){
 		try {
 			BufferedReader reader = new BufferedReader( new FileReader( pathToFile ) );
@@ -17,6 +27,11 @@ class Main{
 			return reader;
 		}
 	}
+	/*
+	* Получение пользовательского пути к файлу из аргументов программы
+	* @param args - массив аргументов
+	* @return путь к файлу, если задан второй аргумент, и "text.txt" если нет
+	* */
 	public static String getPath( String[] args ){
 		if(args.length < 2){
 			return DEFAULT_PATH_TO_FILE;
@@ -24,6 +39,11 @@ class Main{
 			return args[1];
 		}
 	}
+	/*
+	* Читает файл построчно и выводит в консоль строки, содержащие искоую строку
+	* @param toFind искомый набор символов, для унификации рпиведен в нижний регистр
+	* @param reader Буферезированный вывод из файла
+	* */
 	public static void grep ( BufferedReader reader, String toFind ) throws IOException{
 		String lineFromFile, stringWithLowerCase;
 		Boolean isNothing = true;
@@ -38,10 +58,14 @@ class Main{
 		if( isNothing )
 			System.out.println("I can't found your string here((");
 	}
+	/*
+	* Получение введенной пользователем строки для поиска из аргументов
+	* @param args массив аргументов программы
+	* */
 	public static String getArgString ( String[] args ){
 		return args[0];
 	}
-	public static void main( String[] args ) throws IOException, FileNotFoundException{
+	public static void main( String[] args ) throws IOException {
 		if( args.length < 1 ){
 			System.out.println( "GOOD BYE MISTER!!!!1!" );
 			System.exit(0);
