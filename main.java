@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.nio.Buffer;
 
 //MY GREP)))0
-    /*
+    /**
 	* Аналог grep, с чтением только из файла
 	* @author : Viktor Kozlov
 	*
@@ -13,10 +13,11 @@ import java.nio.Buffer;
 class Main {
     public static final String DEFAULT_PATH_TO_FILE = "text.txt";
 
-    /*
+    /**
     * Октрытие буфферизированного чтения из файла
     * @param pathToFile Путь к файлу
-    * @return BufferedReader с открытым файлом
+    * @throws FileNotFoundException if path to file is wrong
+    * @return BufferReader with opened file
     * */
     public static BufferedReader openFile(String pathToFile) {
         try {
@@ -29,10 +30,10 @@ class Main {
         }
     }
 
-    /*
+    /**
     * Получение пользовательского пути к файлу из аргументов программы
     * @param args - массив аргументов
-    * @return путь к файлу, если задан второй аргумент, и "text.txt" если нет
+    * @return String file path or "text.txt" if second argument does not exist
     * */
     public static String getPath(String[] args) {
         if (args.length < 2) {
@@ -42,10 +43,11 @@ class Main {
         }
     }
 
-    /*
+    /**
     * Читает файл построчно и выводит в консоль строки, содержащие искоую строку
     * @param toFind искомый набор символов, для унификации рпиведен в нижний регистр
     * @param reader Буферезированный вывод из файла
+    * @throws IOException
     * */
     public static void grep(BufferedReader reader, String toFind) throws IOException {
         String lineFromFile, stringWithLowerCase;
@@ -62,7 +64,7 @@ class Main {
             System.out.println("I can't found your string here((");
     }
 
-    /*
+    /**
     * Получение введенной пользователем строки для поиска из аргументов
     * @param args массив аргументов программы
     * */
