@@ -2,7 +2,6 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.Buffer;
 
 //MY GREP)))0
     /**
@@ -16,17 +15,16 @@ class Main {
     /**
     * Октрытие буфферизированного чтения из файла
     * @param pathToFile Путь к файлу
-    * @throws FileNotFoundException if path to file is wrong
     * @return BufferReader with opened file
     * */
     public static BufferedReader openFile(String pathToFile) {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(pathToFile));
-            return reader;
+            //BufferedReader reader = ;
+            return new BufferedReader(new FileReader(pathToFile));
         } catch (FileNotFoundException err) {
             System.err.println(err.getMessage());
-            BufferedReader reader = openFile(DEFAULT_PATH_TO_FILE);
-            return reader;
+            //BufferedReader reader = openFile(DEFAULT_PATH_TO_FILE);
+            return openFile(DEFAULT_PATH_TO_FILE);
         }
     }
 
@@ -54,8 +52,7 @@ class Main {
         Boolean isNothing = true;
         while ((lineFromFile = reader.readLine()) != null) {
             stringWithLowerCase = lineFromFile;
-            stringWithLowerCase.toLowerCase();
-            if (stringWithLowerCase.indexOf(toFind) != -1) {
+            if (stringWithLowerCase.toLowerCase().contains(toFind)) {
                 System.out.println(lineFromFile);
                 isNothing = false;
             }
